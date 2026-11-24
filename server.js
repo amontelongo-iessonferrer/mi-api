@@ -34,3 +34,9 @@ app.get("/api/salud", (req, res) => {
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`${NOMBRE} escuchando en el puerto ${PORT}`);
 });
+
+app.get("/api/hora", (req, res) => {
+  res.json({
+    hora: new Date().toLocaleTimeString("es-ES", { timeZone: "Europe/Madrid" }),
+  });
+});
